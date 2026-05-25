@@ -1,0 +1,12 @@
+services:
+  pmg-test:
+    image: ghcr.io/client-api/proxmox-docker/pmg-test:9.0
+    container_name: pmg-test
+    hostname: pmg-test
+    privileged: true
+    ports:
+      - "8006:8006"
+    tmpfs:
+      - /run
+      - /var/lock
+    stop_grace_period: 10s
